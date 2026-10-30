@@ -1,0 +1,77 @@
+/* mindcontact.cloud — one page that points to mindcontact.net. Mobile first. */
+
+@font-face { font-family: "Source Sans Pro"; font-weight: 400; font-display: swap; src: url("fonts/SourceSansPro-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans Pro"; font-weight: 600; font-display: swap; src: url("fonts/SourceSansPro-SemiBold.woff2") format("woff2"); }
+
+:root {
+  --navy: #005282;
+  --blue: #296DC1;
+  --cyan: #50D7EA;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font: 400 1rem/1.5 "Source Sans Pro", system-ui, sans-serif;
+  color: #fff;
+  /* Same blue as the logo board in the brand files, deepening to navy at the bottom. */
+  background: linear-gradient(170deg, var(--blue) 0%, var(--blue) 45%, var(--navy) 100%);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.logo { width: min(62vw, 15rem); height: auto; }
+
+.claim {
+  margin: 0;
+  max-width: 18rem;
+  font-size: 1.1rem;
+  opacity: .9;
+}
+
+.go {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 3rem;           /* thumb-sized target */
+  padding: .75rem 1.5rem;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.go:hover, .go:focus-visible { background: #fff; color: var(--blue); outline: none; }
+.go:focus-visible { box-shadow: 0 0 0 4px var(--cyan); }
+
+footer {
+  padding: 1rem 1.5rem 1.5rem;
+  font-size: .8rem;
+  text-align: center;
+  opacity: .7;
+}
+
+@media (min-width: 48rem) {      /* tablet */
+  .logo { width: 20rem; }
+  .claim { max-width: none; font-size: 1.3rem; }
+}
+
+@media (min-width: 75rem) {      /* desktop */
+  .logo { width: 24rem; }
+  main { gap: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { .go { transition: none; } }
