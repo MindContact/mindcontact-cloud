@@ -15,4 +15,8 @@ GitHub Pages dal ramo `main`, cartella `docs/`: ogni push su `main` va online
 da solo. Il dominio è in `docs/CNAME` (`mindcontact.cloud`); `docs/.nojekyll`
 fa servire i file così come sono.
 
+DNS (Cloudflare, solo DNS): `mindcontact.cloud` con i record A di GitHub
+Pages, `www` in CNAME verso `MindContact.github.io` (GitHub lo reindirizza al
+dominio senza `www`).
+
 Regola dei siti MindContact: nessun indirizzo email nelle pagine.
