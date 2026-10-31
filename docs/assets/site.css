@@ -37,8 +37,18 @@ main {
 .claim {
   margin: 0;
   max-width: 18rem;
+  min-height: 3.3em;           /* two lines: the text changes, the layout does not */
   font-size: 1.1rem;
   opacity: .9;
+}
+/* Letters still "decoding": monospaced so the line does not jump, cyan like a terminal. */
+.claim .g {
+  display: inline-block;
+  width: .62em;
+  text-align: center;
+  font-family: ui-monospace, "Cascadia Mono", "DejaVu Sans Mono", Menlo, monospace;
+  color: var(--cyan);
+  text-shadow: 0 0 .4em rgba(80, 215, 234, .6);
 }
 
 .go {
@@ -66,7 +76,7 @@ footer {
 
 @media (min-width: 48rem) {      /* tablet */
   .logo { width: 20rem; }
-  .claim { max-width: none; font-size: 1.3rem; }
+  .claim { max-width: 32rem; font-size: 1.3rem; }
 }
 
 @media (min-width: 75rem) {      /* desktop */
